@@ -1,6 +1,5 @@
 package model;
 
-
 import model.Nhanvien;
 
 public class NhanVienNhaphang extends Nhanvien {

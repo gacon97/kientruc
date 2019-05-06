@@ -1,8 +1,5 @@
 package model;
 
-
-import model.Nguoi;
-
 public class Khachhang extends Nguoi {
 
 	private int maKH;
@@ -34,15 +31,6 @@ public class Khachhang extends Nguoi {
 
 	public void getAttribute() {
 		// TODO - implement Khachhang.getAttribute
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param attribute
-	 */
-	public void setAttribute(int attribute) {
-		// TODO - implement Khachhang.setAttribute
 		throw new UnsupportedOperationException();
 	}
 

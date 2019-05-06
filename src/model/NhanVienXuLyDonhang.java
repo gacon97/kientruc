@@ -1,8 +1,5 @@
 package model;
 
-
-import model.Nhanvien;
-
 public class NhanVienXuLyDonhang extends Nhanvien {
 
 	private Donhang donHang;

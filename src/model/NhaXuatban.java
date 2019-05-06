@@ -1,8 +1,5 @@
 package model;
 
-
-import model.Diachi;
-
 public class NhaXuatban {
 
 	private int maNXB;

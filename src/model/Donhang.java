@@ -1,8 +1,5 @@
 package model;
 
-
-import model.NhanVienBanhang;
-
 public class Donhang {
 
 	private int id;
@@ -10,6 +7,33 @@ public class Donhang {
 	private float tongTien;
 	private NhanVienBanhang nhanVien;
 	private Khachhang khachHang;
+        private float phiVanChuyen;
+        private float tienChietKhau;
+        private float tienHang;
+
+    public float getTienHang() {
+        return tienHang;
+    }
+
+    public void setTienHang(float tienHang) {
+        this.tienHang = tienHang;
+    }
+
+    public float getPhiVanChuyen() {
+        return phiVanChuyen;
+    }
+
+    public void setPhiVanChuyen(float phiVanChuyen) {
+        this.phiVanChuyen = phiVanChuyen;
+    }
+
+    public float getTienChietKhau() {
+        return tienChietKhau;
+    }
+
+    public void setTienChietKhau(float tienChietKhau) {
+        this.tienChietKhau = tienChietKhau;
+    }
 
 	public int getId() {
 		return this.id;
@@ -36,16 +60,14 @@ public class Donhang {
 	}
 
 	public float getTongTien() {
-		return this.tongTien;
+		return this.tienHang + this.phiVanChuyen - this.tienChietKhau;
 	}
 
 	/**
 	 * 
 	 * @param tongTien
 	 */
-	public void setTongTien(float tongTien) {
-		this.tongTien = tongTien;
-	}
+	
 
 	public NhanVienBanhang getNhanVien() {
 		return this.nhanVien;

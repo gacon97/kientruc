@@ -1,8 +1,5 @@
 package model;
 
-
-import model.Diachi;
-
 public class Nguoi {
 
 	private Hoten hoTen;
