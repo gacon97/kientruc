@@ -17,7 +17,7 @@ public final class MysqlConnect {
      public Connection conn;
     private Statement statement;
     public static MysqlConnect db;
-    private MysqlConnect() {
+    public MysqlConnect() {
         String url= "jdbc:mysql://localhost:3306/";
         String dbName = "book";
         String driver = "com.mysql.jdbc.Driver";
@@ -49,10 +49,17 @@ public final class MysqlConnect {
      * @throws SQLException
      */
     public ResultSet query(String query) throws SQLException{
-        statement = (Statement) db.conn.createStatement();
-        ResultSet res = statement.executeQuery(query);
+        ResultSet res =null;
+        try {
+         Statement stmt = conn.createStatement();
+         res = stmt.executeQuery(query);
+         }
+        catch(Exception e) {
+         e.printStackTrace();
+        } 
         return res;
     }
+    
     /**
      * @desc Method to insert data to a table
      * @param insertQuery String The Insert query
@@ -64,5 +71,21 @@ public final class MysqlConnect {
         int result = statement.executeUpdate(insertQuery);
         return result;
  
+    }
+    
+    public boolean checkUser()  //Ham kiem tra uer co ton tai ko
+    {
+        String query = "Select * FROM taikhoan WHERE UserName ='nhanvien' AND Password ='nhanvien'";
+        try {
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery(query);
+         if (rs.next()) {
+             System.out.println("ok");
+          return true;
+         }
+        }catch(Exception e) {
+         e.printStackTrace();
+        } 
+        return false;
     }
 }
